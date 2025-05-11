@@ -2,22 +2,22 @@ const marvel = [" Iron Man", "Captain America", "Thor",];
 const dc = ["Superman", "Batman", "The Flash", "Green Lantern"];
 
 //  Not a good practice to use
-// marvel.push(dc)
-// console.log(marvel)
+marvel.push(dc)
+console.log(marvel)
 
 //  Often used but not recommended
 const hero = marvel.concat(dc)
-// console.log(hero)
+console.log(hero)
 
 // Recommended way 
 const heroes = [...marvel, ...dc]
-// console.log(heroes)
+console.log(heroes)
 
 
-// const numArr = [1,2,3,[4,5,[6,7,8], [9,10,[11,12,3,5,9]]], 13, 14, 15];
-// console.log(numArr)
-// const flatArr = numArr.flat(Infinity)
-// console.log(flatArr)
+const numArr = [1,2,3,[4,5,[6,7,8], [9,10,[11,12,3,5,9]]], 13, 14, 15];
+console.log(numArr)
+const flatArr = numArr.flat(Infinity)
+console.log(flatArr)
 
 
 console.log(Array.isArray("bahadur"))
