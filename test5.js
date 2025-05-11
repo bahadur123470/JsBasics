@@ -19,7 +19,7 @@ console.log(newName);
 
 const newName2 = name.slice(0, 5)
 console.log(newName2);
-const newName2a = name.slice(-10, 3 )
+const newName2a = name.slice(-11, 4)
 console.log(newName2a)
 
 const newName3 = "  Bahadur Ali "
@@ -33,4 +33,4 @@ console.log(url.includes("ali"))
 console.log(url.includes("present"))
 
 let fruits = "banana, apple, orange, mango"
-console.log(fruits.split(", "))
+console.log(fruits.split(","))
