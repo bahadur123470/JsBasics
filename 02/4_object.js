@@ -3,7 +3,7 @@ userDetail.name = "Bahadur"
 userDetail.age = 21
 userDetail.email = "bahadur@gmail.com"
 
-// console.log(userDetail)
+console.log(userDetail)
 
 const accountTitle = {
     title: "bahadur",

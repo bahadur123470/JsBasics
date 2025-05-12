@@ -14,7 +14,7 @@ const heroes = [...marvel, ...dc]
 console.log(heroes)
 
 
-const numArr = [1,2,3,[4,5,[6,7,8], [9,10,[11,12,3,5,9]]], 13, 14, 15];
+const numArr = [1,2,3,[4,5,[6,7,8], [9,10,[11,12,]]], 13, 14, 15];
 console.log(numArr)
 const flatArr = numArr.flat(Infinity)
 console.log(flatArr)

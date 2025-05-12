@@ -24,14 +24,14 @@ console.log(accountUser.occupation) // it will not change the value of occupatio
 accountUser.workdays = function(){
     console.log("Monday to Friday")
 }
-console.log(accountUser.workdays())
+console.log(accountUser.workdays)
 
 accountUser.offdays = function(){
     console.log("Saturday and Sunday")
 }
-console.log(accountUser.offdays())
+console.log(accountUser.offdays)
 
 accountUser.duty = function(){
     console.log(`My name is ${this.full_name}. My workdays are ${this.workdays} and my offdays are ${this.offdays}`)
 }
-console.log(accountUser.duty())
+console.log(accountUser.duty)
