@@ -78,4 +78,4 @@ switch (true){
 //  "0", '0', " ", ' ' , true, 1, [ empty array ], { empty object },  function(){},
 
 //  Nullish coalescing Operator (??): null undefined
-//  Terniary Operator
+//  Ternary Operator
