@@ -1,6 +1,6 @@
 let chaseTarget = 0
 do {
-    // console.log(`match start ${chaseTarget}`);
+    console.log(`match start ${chaseTarget}`);
     chaseTarget++
 } while ( chaseTarget <= 49);
 
