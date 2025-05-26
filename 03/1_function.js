@@ -7,7 +7,7 @@ function namespell(){
     console.log("U")
     console.log("R")
 }
-// namespell()
+namespell()
 
 function addingNumber(num1, num2){
     console.log(num1 + num2)
@@ -46,7 +46,7 @@ const drinks = {
     price: 89.99
 }
 function drinksDetails(anydrink){
-    console.log(`Drink of name ${anydrink.name} is available at price of ${anydrink.price}`)
+    console.log(`Name of drink: ${anydrink.name} is available at price of ${anydrink.price}`)
 }
 drinksDetails(drinks)
 drinksDetails({
