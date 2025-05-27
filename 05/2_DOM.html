@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #010101;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="languages">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // Creating a new element
+
+    // function addLanguage(languageName){
+    //     const li = document.createElement('li')
+    //     li.innerHTML = `${languageName}`
+    //     document.querySelector('.languages').appendChild(li)
+    // }
+    // addLanguage("Typescript")
+    // addLanguage("Python")
+    // addLanguage("Java")
+    // addLanguage("C++")
+
+    // Using a more optimized way to create and append elements. This method is more efficient as it reduces the number of DOM manipulations
+    function optimizedWay(languageName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(languageName))
+        document.querySelector('.languages').appendChild(li)
+    }
+    optimizedWay("MongoDB")
+    optimizedWay("Express")
+    optimizedWay("React")
+    optimizedWay("Node.js")
+    optimizedWay("Next.js")
+
+    // Editing an existing element
+    const editLanguage = document.querySelector(".languages li:nth-child(4)")
+    const editLi = document.createElement('li')
+    editLi.textContent = "Angular"
+    editLanguage.replaceWith(editLi)
+
+    // Alternatively, you can also use outerHTML to replace the element
+    const editLanguage2 = document.querySelector(".languages li:first-child")
+    editLanguage2.outerHTML = "<li>Typescript</li>"
+
+    // Removing an element
+    const removeLanguage = document.querySelector(".languages li:last-child")
+    removeLanguage.remove()
+</script>
+</html>
