@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #212121;
+            box-sizing: border-box;
+        }
+        h2 {
+            color: aliceblue;
+            text-align: center;
+        }
+        ul {
+            padding: 0;
+            margin: 20px;
+        }
+        li {
+            margin: 20px;
+            overflow: hidden;
+        }
+        img {
+            width: 400px;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        a {
+            font-size: 2rem;
+            color: aliceblue;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Images Event</h2>
+    <div>
+        <ul id="images">
+            <li><img src="https://images.pexels.com/photos/32260207/pexels-photo-32260207/free-photo-of-stunning-view-of-eglise-saint-jacques-sur-coudenberg.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Palace" id="one"></li>
+            <li><img src="https://images.pexels.com/photos/5101155/pexels-photo-5101155.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="palace" id="two"></li>
+            <li><img src="https://images.pexels.com/photos/21782805/pexels-photo-21782805/free-photo-of-st-stepehens-basilica.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="ancient" id="three"></li>
+            <li><img src="https://images.pexels.com/photos/6034081/pexels-photo-6034081.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mosque" id="four"></li>
+            <li><img src="https://images.pexels.com/photos/14375296/pexels-photo-14375296.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Damage" id="five"></li>
+            <li><img src="https://images.pexels.com/photos/18434076/pexels-photo-18434076/free-photo-of-sheikh-rashid-bin-mohammed-mosque-in-dubai-uae.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="dubai" id="six"></li>
+            <li><a href="https://www.google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById("two").addEventListener("click", function(e){
+    //     // console.log("Event Target:", e.target);
+    //     console.log("li Element Clicked")
+    //     e.stopPropagation();
+        
+    // }, false)
+    // document.getElementById("images").addEventListener("click", function(e){
+    //     // console.log("Event Target:", e.target);
+    //     console.log("ul Element Clicked")
+    // }, false)
+    // document.getElementById("google").addEventListener("click", function(e){
+    //     e.preventDefault()
+    //     console.log("Google Link Clicked")
+    //     e.stopPropagation();
+    // }, false)
+
+    //  type, timestamp, target, defaultPrevented, toElement, sourceElement, currentTarget
+    //  clientX, clientY, offsetX, offsetY, pageX, pageY , screenX, screenY
+    //  altKey, ctrlKey, metaKey, shiftKey, keyCode, charCode
+
+    document.querySelector("#images").addEventListener("click", function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id)
+            let removeItem = e.target.parentNode
+            removeItem.remove();
+        }
+        else if (e.target.tagName === "A"){
+            e.preventDefault();
+            console.log("Link Clicked");
+        }
+    })
+</script>
+</html>
