@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+         body {
+            background-color: #212121;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            color: #fff;
+            margin: 50px 40px;
+            color: aliceblue;
+            letter-spacing: 1px;
+        }
+        button {
+
+            margin: 30px;
+            padding: 10px 30px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>setInterval and clearInterval</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // const print = function(str){
+    //     console.log(str , Date.now())
+    // }
+    // const interval = setInterval(print, 1000, "Brave");
+
+    // clearInterval(interval);
+    const heading = document.querySelector('h1');
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
+
+    let interval = null;
+    startButton.addEventListener("click", function () {
+    if (interval) return;
+    interval = setInterval(function () {
+        heading.style.color = heading.style.color === "red" ? "royalblue" : "red";
+    }, 1000);
+});
+    stopButton.addEventListener("click", function () {
+    clearInterval(interval);
+    interval = null; // reset interval
+    heading.style.color = "aliceblue";
+});
+
+const framework = document.querySelector('h1');
+const show = document.getElementById('start');
+const hide = document.getElementById('stop');
+
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+         body {
+            background-color: #212121;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            color: #fff;
+            margin: 50px 50px;
+            color: aliceblue;
+            letter-spacing: 1px;
+        }
+        button {
+
+            margin: 30px;
+            padding: 10px 30px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Frameworks</h1>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+</body>
+<script>
+    const framework = document.querySelector('h1');
+    const show = document.getElementById('show');
+    const hide = document.getElementById('hide');
+
+    const frameworks = ["ReactJS", "AngularJS", "VueJS", "SvelteJS", "ExpressJS", "NextJS", "NestJS","MongoDB", "NodeJS", "SailJS"];
+    let index = 0;
+    let interval = null;
+    let isRed = true; 
+
+
+    show.addEventListener("click", function(){
+        if (interval) return; 
+            interval = setInterval(function(){
+                framework.innerHTML = frameworks[index]
+                framework.style.color = isRed ? "red" : "royalblue";
+                isRed = !isRed;
+                index = (index + 1) % frameworks.length
+            }, 1000);
+        }
+    )
+    hide.addEventListener("click", function(){
+        if (interval){
+            clearInterval(interval);
+            interval = null;
+            framework.innerHTML = "JS Frameworks";
+            framework.style.color = "aliceblue";
+            index = 0;
+            isRed = true;
+        }
+    })
+</script>
+</html>

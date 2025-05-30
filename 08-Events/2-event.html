@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        body {
+            background-color: #212121;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 50px;
+            color: aliceblue;
+            letter-spacing: 1px;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 30px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bus-Station-Lahore</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    const bus = function(){
+        console.log("First Class Bus is Arrived");
+    }
+    // setTimeout(bus, 3000);
+
+    const arrived = function(){
+        document.querySelector("h1").innerHTML = "Business Class Bus has Arrived";
+    }
+    const change = setTimeout(arrived, 4000)
+
+    document.querySelector("#stop").addEventListener("click", function(){
+        clearTimeout(change)
+        console.log("Stop Button is Clicked");
+
+    })
+</script>
+</html>
