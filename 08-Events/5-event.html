@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+         body {
+            background-color: #212121;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            color: #fff;
+            margin: 50px 50px;
+            color: aliceblue;
+            letter-spacing: 1px;
+        }
+        button {
+
+            margin: 30px;
+            padding: 10px 30px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background Color will change every second</h1>
+    <button id="change">Change</button>
+    <button id="set">Set</button>
+</body>
+<script>
+    const randomColor = function(){
+        const hex = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++){
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    };
+    
+    let intervalId; 
+    const changeColor = function (){
+        if (!intervalId){
+            intervalId = setInterval(changeBGColor, 1000);
+        }
+        function changeBGColor() {
+            document.body.style.backgroundColor = randomColor();
+        }
+    }
+    const setColor = function (){
+        clearInterval(intervalId)
+        intervalId = null;
+    }
+
+    document.querySelector("#change").addEventListener("click", changeColor)
+    document.querySelector("#set").addEventListener("click", setColor)
+
+</script>
+</html>
