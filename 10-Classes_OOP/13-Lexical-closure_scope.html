@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Scopes</title>
+    <style>
+        body {
+            background-color: #313131;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="blue">Blue</button>
+    <button id="red">Red</button>
+</body>
+<script>
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`; 
+        }
+    }
+    document.getElementById("blue").onclick = clickHandler("blue");
+    document.getElementById("red").onclick = clickHandler("red");
+</script>
+</html>  
